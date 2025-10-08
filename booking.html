@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Session | Aliceta Studios</title>
+    <meta name="description" content="Book your photography or makeup session with Aliceta Studios. Choose your service, select a date, and secure your booking in minutes.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/accessibility.css">
+    <link rel="stylesheet" href="css/booking.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" aria-label="Aliceta Studios Home">
+                    <h1>Aliceta Studios</h1>
+                </a>
+            </div>
+            <nav class="main-nav" aria-label="Main navigation">
+                <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-list">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="booking.html" class="cta active" aria-current="page">Book a Session</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <section class="booking-hero">
+            <div class="container">
+                <h1>Book Your Session</h1>
+                <p>Book your session in 3 easy steps: choose a service, pick a date, and secure your booking with a deposit. Need a custom package or makeup training? <a href="index.html#contact">Contact us</a>.</p>
+            </div>
+        </section>
+
+        <section class="booking-section">
+            <div class="container">
+                <div class="booking-progress">
+                    <div class="progress-step active" data-step="1">
+                        <span class="step-number">1</span>
+                        <span class="step-name">Service</span>
+                    </div>
+                    <div class="progress-step" data-step="2">
+                        <span class="step-number">2</span>
+                        <span class="step-name">Date & Time</span>
+                    </div>
+                    <div class="progress-step" data-step="3">
+                        <span class="step-number">3</span>
+                        <span class="step-name">Details</span>
+                    </div>
+                    <div class="progress-step" data-step="4">
+                        <span class="step-number">4</span>
+                        <span class="step-name">Confirm</span>
+                    </div>
+                </div>
+
+                <form id="bookingForm" class="booking-form">
+                    <!-- Step 1: Service Selection -->
+                    <div class="form-step active" data-step="1">
+                        <h2>Select a Service</h2>
+                        <div class="service-options">
+                            <div class="service-option">
+                                <input type="radio" name="service" id="portrait" value="portrait" required>
+                                <label for="portrait">
+                                    <h3>Portrait Photography</h3>
+                                    <p>Professional portrait sessions capturing your unique personality and style.</p>
+                                    <p class="service-price">Starting from: $250</p>
+                                    <p class="service-duration">Duration: 1-2 hours</p>
+                                    <p class="service-includes">Includes: 5 edited digital photos</p>
+                                </label>
+                            </div>
+                            <div class="service-option">
+                                <input type="radio" name="service" id="wedding" value="wedding">
+                                <label for="wedding">
+                                    <h3>Wedding Photography</h3>
+                                    <p>Comprehensive wedding coverage to document your special day.</p>
+                                    <p class="service-price">Starting from: $1,500</p>
+                                    <p class="service-duration">Duration: 6-8 hours</p>
+                                    <p class="service-includes">Includes: Full day coverage, 100+ edited photos, online gallery</p>
+                                </label>
+                            </div>
+                            <div class="service-option">
+                                <input type="radio" name="service" id="fashion" value="fashion">
+                                <label for="fashion">
+                                    <h3>Fashion Photography</h3>
+                                    <p>Creative fashion shoots for models, designers, and brands.</p>
+                                    <p class="service-price">Starting from: $500</p>
+                                    <p class="service-duration">Duration: 3-4 hours</p>
+                                    <p class="service-includes">Includes: 10 edited digital photos, styling consultation</p>
+                                </label>
+                            </div>
+                            <div class="service-option">
+                                <input type="radio" name="service" id="makeup" value="makeup">
+                                <label for="makeup">
+                                    <h3>Makeup Services</h3>
+                                    <p>Professional makeup application for events, photoshoots, or special occasions.</p>
+                                    <p class="service-price">Starting from: $150</p>
+                                    <p class="service-duration">Duration: 1-1.5 hours</p>
+                                    <p class="service-includes">Includes: Full face makeup, lashes, touch-up kit</p>
+                                </label>
+                            </div>
+                            <div class="service-option">
+                                <input type="radio" name="service" id="training" value="training">
+                                <label for="training">
+                                    <h3>Makeup Training</h3>
+                                    <p>One-on-one or group makeup training sessions.</p>
+                                    <p class="service-price">Starting from: $300</p>
+                                    <p class="service-duration">Duration: 3-4 hours</p>
+                                    <p class="service-includes">Includes: Training materials, certificate of completion</p>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-navigation">
+                            <button type="button" class="btn btn-primary next-step">Continue to Date & Time</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Date & Time Selection -->
+                    <div class="form-step" data-step="2">
+                        <h2>Select Date & Time</h2>
+                        <div class="form-group">
+                            <label for="booking-date">Preferred Date</label>
+                            <input type="text" id="booking-date" name="booking-date" class="date-picker" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-time">Preferred Time</label>
+                            <select id="booking-time" name="booking-time" required>
+                                <option value="">Select a time</option>
+                                <option value="09:00">9:00 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="13:00">1:00 PM</option>
+                                <option value="14:00">2:00 PM</option>
+                                <option value="15:00">3:00 PM</option>
+                                <option value="16:00">4:00 PM</option>
+                                <option value="17:00">5:00 PM</option>
+                            </select>
+                        </div>
+                        <div class="form-navigation">
+                            <button type="button" class="btn btn-secondary prev-step">Back</button>
+                            <button type="button" class="btn btn-primary next-step">Continue to Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Client Details -->
+                    <div class="form-step" data-step="3">
+                        <h2>Your Details</h2>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <select id="location" name="location" required>
+                                <option value="">Select location</option>
+                                <option value="studio">Studio Session</option>
+                                <option value="onsite">On-site (Client Location)</option>
+                            </select>
+                        </div>
+                        <div class="form-group location-details" style="display: none;">
+                            <label for="address">Address</label>
+                            <textarea id="address" name="address" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="people">Number of People</label>
+                            <input type="number" id="people" name="people" min="1" value="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="notes">Special Requests or Notes</label>
+                            <textarea id="notes" name="notes" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="addons">Add-ons (Optional)</label>
+                            <div class="addon-options">
+                                <div class="addon-option">
+                                    <input type="checkbox" id="hair" name="addons[]" value="hair">
+                                    <label for="hair">Hair Styling (+$75)</label>
+                                </div>
+                                <div class="addon-option">
+                                    <input type="checkbox" id="extra-looks" name="addons[]" value="extra-looks">
+                                    <label for="extra-looks">Extra Looks/Outfit Changes (+$50 per look)</label>
+                                </div>
+                                <div class="addon-option">
+                                    <input type="checkbox" id="prints" name="addons[]" value="prints">
+                                    <label for="prints">Print Package (+$100)</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="promo">Promo Code (Optional)</label>
+                            <input type="text" id="promo" name="promo">
+                        </div>
+                        <div class="form-group terms-checkbox">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">I agree to the <a href="#" class="terms-link">cancellation policy and terms</a></label>
+                        </div>
+                        <div class="form-navigation">
+                            <button type="button" class="btn btn-secondary prev-step">Back</button>
+                            <button type="button" class="btn btn-primary next-step">Review & Confirm</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Confirmation -->
+                    <div class="form-step" data-step="4">
+                        <h2>Review & Confirm</h2>
+                        <div class="booking-summary">
+                            <h3>Booking Summary</h3>
+                            <div class="summary-item">
+                                <span class="summary-label">Service:</span>
+                                <span class="summary-value" id="summary-service"></span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Date & Time:</span>
+                                <span class="summary-value" id="summary-datetime"></span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Name:</span>
+                                <span class="summary-value" id="summary-name"></span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Email:</span>
+                                <span class="summary-value" id="summary-email"></span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Phone:</span>
+                                <span class="summary-value" id="summary-phone"></span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Location:</span>
+                                <span class="summary-value" id="summary-location"></span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">People:</span>
+                                <span class="summary-value" id="summary-people"></span>
+                            </div>
+                            <div class="summary-item" id="summary-addons-container">
+                                <span class="summary-label">Add-ons:</span>
+                                <span class="summary-value" id="summary-addons">None</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Notes:</span>
+                                <span class="summary-value" id="summary-notes">None</span>
+                            </div>
+                        </div>
+
+                        <div class="price-summary">
+                            <h3>Price Summary</h3>
+                            <div class="price-item">
+                                <span class="price-label">Base Price:</span>
+                                <span class="price-value" id="base-price">$0</span>
+                            </div>
+                            <div class="price-item" id="addons-price-container">
+                                <span class="price-label">Add-ons:</span>
+                                <span class="price-value" id="addons-price">$0</span>
+                            </div>
+                            <div class="price-item total">
+                                <span class="price-label">Total:</span>
+                                <span class="price-value" id="total-price">$0</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-label">Required Deposit (50%):</span>
+                                <span class="price-value" id="deposit-price">$0</span>
+                            </div>
+                        </div>
+
+                        <div class="payment-options">
+                            <h3>Payment Options</h3>
+                            <div class="payment-option">
+                                <input type="radio" name="payment" id="deposit" value="deposit" checked>
+                                <label for="deposit">Pay Deposit Now</label>
+                            </div>
+                            <div class="payment-option">
+                                <input type="radio" name="payment" id="full" value="full">
+                                <label for="full">Pay Full Amount Now</label>
+                            </div>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button type="button" class="btn btn-secondary prev-step">Back</button>
+                            <button type="submit" class="btn btn-primary">Complete Booking</button>
+                        </div>
+                    </div>
+
+                    <!-- Success Message (Hidden by default) -->
+                    <div class="form-step success-step">
+                        <div class="success-message">
+                            <i class="fas fa-check-circle"></i>
+                            <h2>Booking Confirmed!</h2>
+                            <p>Thank you for booking with Aliceta Studios. A confirmation email has been sent to your email address.</p>
+                            <div class="calendar-buttons">
+                                <a href="#" class="btn btn-secondary" id="add-to-google">Add to Google Calendar</a>
+                                <a href="#" class="btn btn-secondary" id="add-to-ical">Add to Apple Calendar</a>
+                            </div>
+                            <p>If you need to reschedule or cancel your appointment, please contact us at least 48 hours in advance.</p>
+                            <a href="index.html" class="btn btn-primary">Return to Homepage</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Aliceta Studios</h2>
+                    <p>Capturing moments, creating memories</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#portfolio">Portfolio</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Aliceta Studios. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+<!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="js/main.js"></script>
+    <script src="js/booking.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/performance.js"></script>
+</body>
+</html>

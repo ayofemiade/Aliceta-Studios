@@ -1,0 +1,133 @@
+/**
+ * Aliceta Studios - Accessibility Enhancements
+ * Styles to improve accessibility across the website
+ */
+
+/* ===== FOCUS STATES ===== */
+:focus {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+/* High contrast focus for keyboard navigation */
+:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 2px white, 0 0 0 5px var(--color-gold);
+}
+
+/* Skip to content link - hidden until focused */
+.skip-link {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  background: var(--color-gold);
+  color: white;
+  padding: 10px;
+  z-index: 1001;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Improved contrast for text */
+.high-contrast-text {
+  color: var(--color-charcoal);
+  text-shadow: none;
+}
+
+/* Ensure form elements have proper contrast */
+input, textarea, select, button {
+  font-size: 1rem;
+}
+
+/* Increase tap target sizes for mobile */
+.nav-list a,
+.btn,
+.form-group input[type="checkbox"],
+.form-group input[type="radio"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Ensure proper spacing between interactive elements */
+.nav-list li,
+.form-group,
+.btn {
+  margin-bottom: 0.5rem;
+}
+
+/* Improved form field focus states */
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 2px var(--color-gold);
+}
+
+/* ARIA-specific styling */
+[aria-current="page"] {
+  font-weight: bold;
+  border-bottom: 2px solid var(--color-gold);
+}
+
+/* Ensure proper contrast for links */
+a {
+  text-decoration: underline;
+}
+
+.nav-list a,
+.footer a,
+.btn {
+  text-decoration: none;
+}
+
+/* Improved visibility for form labels */
+label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+/* Error states for form validation */
+.form-group.error input,
+.form-group.error textarea,
+.form-group.error select {
+  border-color: #d32f2f;
+}
+
+.error-message {
+  color: #d32f2f;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Ensure proper contrast for placeholder text */
+::placeholder {
+  color: #666;
+  opacity: 1;
+}
+
+/* Reduced motion option */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+  .btn-primary,
+  .btn-secondary {
+    border: 2px solid;
+  }
+  
+  img {
+    border: 1px solid transparent;
+  }
+}

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Taiwo O. Oliyide's photography portfolio at Aliceta Studios - featuring portrait, wedding, fashion photography and makeup artistry.">
+    <title>Portfolio | Aliceta Studios - Portrait, Wedding & Fashion Photography</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/accessibility.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Lightbox for gallery -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lg-zoom.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lg-thumbnail.css">
+</head>
+<body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" aria-label="Aliceta Studios Home">Aliceta Studios</a>
+            </div>
+            <nav class="main-nav" aria-label="Main navigation">
+                <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
+                    <li><a href="booking.html">Booking</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+    <!-- Portfolio Hero -->
+    <section class="portfolio-hero">
+        <div class="container">
+            <h1>Portfolio</h1>
+            <p>Explore my work across portrait, wedding, fashion photography and makeup artistry</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Categories -->
+    <section class="portfolio-categories">
+        <div class="container">
+            <div class="category-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="portrait">Portraits</button>
+                <button class="filter-btn" data-filter="wedding">Weddings</button>
+                <button class="filter-btn" data-filter="fashion">Fashion</button>
+                <button class="filter-btn" data-filter="makeup">Makeup</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery -->
+    <section class="portfolio-gallery">
+        <div class="container">
+            <div class="gallery-grid" id="gallery">
+                <!-- Portrait Images -->
+                <div class="gallery-item portrait" data-src="images/portfolio/portrait-1.jpg">
+                    <img src="images/portfolio/portrait-1.jpg" alt="Studio portrait of a woman in elegant attire" loading="lazy">
+                    <div class="item-overlay">
+                        <h3>Studio Portrait</h3>
+                        <p>Lagos, 2023</p>
+                    </div>
+                </div>
+                <div class="gallery-item portrait" data-src="images/portfolio/portrait-2.jpg">
+                    <img src="images/portfolio/portrait-2.jpg" alt="Natural light portrait of a man in business casual attire" loading="lazy">
+                    <div class="item-overlay">
+                        <h3>Executive Portrait</h3>
+                        <p>Victoria Island, 2023</p>
+                    </div>
+                </div>
+                <div class="gallery-item portrait" data-src="images/portfolio/portrait-3.jpg">
+                    <img src="images/portfolio/portrait-3.jpg" alt="Family portrait with parents and two children" loading="lazy">
+                    <div class="item-overlay">
+                        <h3>Family Session</h3>
+                        <p>Lekki, 2022</p>
+                    </div>
+                </div>
+                
+                <!-- Wedding Images -->
+                <div class="gallery-item wedding" data-src="images/portfolio/wedding-1.jpg">
+                    <img src="images/portfolio/wedding-1.jpg" alt="Bride and groom during their first dance" loading="lazy">
+                    <div class="item-overlay">
+                        <h3>First Dance</h3>
+                        <p>Eko Hotel, 2023</p>
+                    </div>
+                </div>
+                <div class="gallery-item wedding" data-src="images/portfolio/wedding-2.jpg">
+                    <img src="images/portfolio/wedding-2.jpg" alt="Bride getting ready with her bridesmaids" loading="lazy">
+                    <div class="item-overlay">
+                        <h3>Bridal Preparation</h3>
+                        <p>Lagos, 2022</p>
+                    </div>
+                </div>
+                <div class="gallery-item wedding" data-src="images/portfolio/wedding-3.jpg">
+                    <img src="images/portfolio/wedding-3.jpg" alt="Couple exchanging vows during ceremony" loading="lazy">
+                    <div class="item-overlay">
+                        <h3>Ceremony</h3>
+                        <p>Ikoyi, 2023</p>
+                    </div>
+                </div>
+                
+                <!-- Fashion Images -->
+                <div class="gallery-item fashion" data-src="images/portfolio/fashion-1.jpg">
+                    <img src="images/portfolio/fashion-1.jpg" alt="Fashion model in designer outfit against urban backdrop" loading="lazy">
+                    <div class="item-overlay">
+                        <h3>Urban Fashion</h3>
+                        <p>Lagos Island, 2023</p>
+                    </div>
+                </div>
+                <div class="gallery-item fashion" data-src="images/portfolio/fashion-2.jpg">
+                    <img src="images/portfolio/fashion-2.jpg" alt="Model showcasing traditional attire with modern twist" loading="lazy">
+                    <div class="item-overlay">
+                        <h3>Cultural Fusion</h3>
+                        <p>Fashion Week, 2022</p>
+                    </div>
+                </div>
+                <div class="gallery-item fashion" data-src="images/portfolio/fashion-3.jpg">
+                    <img src="images/portfolio/fashion-3.jpg" alt="Editorial fashion shoot for magazine" loading="lazy">
+                    <div class="item-overlay">
+                        <h3>Editorial</h3>
+                        <p>Studio Session, 2023</p>
+                    </div>
+                </div>
+                
+                <!-- Makeup Images -->
+                <div class="gallery-item makeup" data-src="images/portfolio/makeup-1.jpg">
+                    <img src="images/portfolio/makeup-1.jpg" alt="Before and after makeup transformation for bridal client" loading="lazy">
+                    <div class="item-overlay">
+                        <h3>Bridal Makeup</h3>
+                        <p>Before/After, 2023</p>
+                    </div>
+                </div>
+                <div class="gallery-item makeup" data-src="images/portfolio/makeup-2.jpg">
+                    <img src="images/portfolio/makeup-2.jpg" alt="Creative makeup look for fashion editorial" loading="lazy">
+                    <div class="item-overlay">
+                        <h3>Editorial Makeup</h3>
+                        <p>Magazine Shoot, 2022</p>
+                    </div>
+                </div>
+                <div class="gallery-item makeup" data-src="images/portfolio/makeup-3.jpg">
+                    <img src="images/portfolio/makeup-3.jpg" alt="Natural makeup look for corporate headshot" loading="lazy">
+                    <div class="item-overlay">
+                        <h3>Corporate Look</h3>
+                        <p>Professional Headshot, 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Client Testimonials</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>"Taiwo captured our wedding day perfectly. The photos tell our story in such a beautiful way. We couldn't be happier with the results!"</p>
+                        <div class="client-info">
+                            <h4>Adebola & Chinedu</h4>
+                            <p>Wedding Photography</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>"My portfolio shots exceeded my expectations. Taiwo has an incredible eye for fashion photography and made me feel comfortable throughout the shoot."</p>
+                        <div class="client-info">
+                            <h4>Amara T.</h4>
+                            <p>Fashion Model</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>"The makeup training I received was comprehensive and hands-on. I've been able to start my own business thanks to the skills I learned."</p>
+                        <div class="client-info">
+                            <h4>Folake O.</h4>
+                            <p>Makeup Training Graduate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-nav">
+                <button class="prev-testimonial" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+                <button class="next-testimonial" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner Logos -->
+    <section class="partner-logos">
+        <div class="container">
+            <h2>Training Partners</h2>
+            <div class="logo-grid">
+                <div class="partner-logo">
+                    <img src="images/partners/daystar-logo.svg" alt="Daystar Skill Acquisition Program logo" loading="lazy">
+                </div>
+                <div class="partner-logo">
+                    <img src="images/partners/house-of-tara-logo.svg" alt="House of Tara International logo" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to book your session?</h2>
+            <p>Let's create beautiful images together</p>
+            <div class="cta-buttons">
+                <a href="booking.html" class="btn btn-primary">Book a Session</a>
+                <a href="index.html#contact" class="btn btn-secondary">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Aliceta Studios</h3>
+                    <p>Portrait, Wedding & Fashion Photography</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="booking.html">Booking</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Lagos, Nigeria</p>
+                    <p><i class="fas fa-phone"></i> +234 XXX XXX XXXX</p>
+                    <p><i class="fas fa-envelope"></i> info@alicetastudios.com</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Aliceta Studios. All rights reserved.</p>
+                <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
+    <script src="js/portfolio.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/performance.js"></script>
+</body>
+</html>
