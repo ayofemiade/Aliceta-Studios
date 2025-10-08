@@ -1039,7 +1039,11 @@ h1, h2, h3, h4 {
     }
     
     .booking-sidebar {
-        order: -1;
+        order: 2;
+    }
+    
+    .booking-form-container {
+        order: 1;
     }
     
     .service-grid {
