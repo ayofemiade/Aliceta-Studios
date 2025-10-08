@@ -371,6 +371,7 @@ function handleLightboxSwipe() {
     }
 }
 
+
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -381,4 +382,82 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(href);
         
         if (target) {
-            const navHeight =
+            const navHeight = navbar.offsetHeight;
+            const targetPosition = target.offsetTop - navHeight;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Performance optimization - debounce scroll events
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Optimized scroll handler
+const handleScroll = debounce(() => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 100) {
+        navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+    } else {
+        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+    }
+}, 10);
+
+window.addEventListener('scroll', handleScroll, { passive: true });
+
+// Initialize page
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Portfolio page loaded successfully');
+    
+    // Add initial fade-in animation to portfolio items
+    portfolioItems.forEach((item, index) => {
+        item.style.opacity = '0';
+        setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.animation = `fadeIn 0.6s ease forwards`;
+        }, index * 50);
+    });
+});
+
+// Preload lightbox images for better UX
+function preloadGalleryImages() {
+    // In a production environment, this would preload actual images
+    // For now, it's a placeholder for future implementation
+    console.log('Gallery images ready');
+}
+
+preloadGalleryImages();
+
+// Mobile sticky CTA visibility
+const mobileCta = document.getElementById('mobileCta');
+const pageHero = document.querySelector('.page-hero');
+
+const ctaObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (window.innerWidth <= 768) {
+            if (!entry.isIntersecting) {
+                mobileCta.style.transform = 'translateY(0)';
+            } else {
+                mobileCta.style.transform = 'translateY(100%)';
+            }
+        }
+    });
+}, { threshold: 0.1 });
+
+mobileCta.style.transition = 'transform 0.3s ease';
+mobileCta.style.transform = 'translateY(100%)';
+ctaObserver.observe(pageHero);
