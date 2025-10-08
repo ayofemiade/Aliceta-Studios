@@ -1,0 +1,349 @@
+/* About Page Styles */
+
+/* Hero Section */
+.about-hero {
+    background-color: #f8f5f2;
+    padding: 120px 0 80px;
+    text-align: center;
+    position: relative;
+}
+
+.about-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 50'%3E%3Cpath d='M0,50 C300,20 600,0 1200,50 L1200,50 L0,50 Z' fill='%23ffffff'/%3E%3C/svg%3E");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.about-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.about-hero p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Our Story Section */
+.our-story {
+    padding: 80px 0;
+}
+
+.story-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.story-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.story-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.story-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.story-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.story-text p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* Team Section */
+.team {
+    background-color: #f8f5f2;
+    padding: 80px 0;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.team-member {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.member-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.member-info {
+    padding: 20px;
+}
+
+.member-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.member-role {
+    color: #d4a373;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.member-bio {
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.member-social {
+    display: flex;
+    gap: 15px;
+}
+
+.member-social a {
+    color: #666;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.member-social a:hover {
+    color: #d4a373;
+}
+
+/* Our Approach Section */
+.approach {
+    padding: 80px 0;
+}
+
+.approach-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.approach-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.approach-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.approach-text p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+.approach-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.approach-list li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #555;
+}
+
+.approach-list li i {
+    color: #d4a373;
+    margin-right: 10px;
+}
+
+.approach-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.approach-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Studio Tour Section */
+.studio-tour {
+    background-color: #f8f5f2;
+    padding: 80px 0;
+}
+
+.studio-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* CTA Section */
+.cta-section {
+    background-color: #d4a373;
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Section Header Styles */
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.section-header .subtitle {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .about-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .story-content, .approach-content {
+        flex-direction: column;
+    }
+    
+    .story-image, .approach-image {
+        order: 1;
+    }
+    
+    .story-text, .approach-text {
+        order: 2;
+    }
+    
+    .team-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .about-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .story-text h3, .approach-text h3 {
+        font-size: 1.5rem;
+    }
+    
+    .studio-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Utility Classes */
+.rounded-image {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+    padding: 80px 0;
+}
