@@ -1,0 +1,538 @@
+/* Services Page Specific Styles */
+
+/* Active Nav Link */
+.nav-link.active {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+/* Page Header */
+.page-header {
+    padding: 6rem 0 4rem;
+    background: linear-gradient(135deg, var(--ivory) 0%, var(--blush) 100%);
+    text-align: center;
+}
+
+.page-title {
+    font-size: 3.5rem;
+    color: var(--charcoal);
+    margin-bottom: 1rem;
+    font-family: var(--font-serif);
+}
+
+.page-subtitle {
+    font-size: 1.25rem;
+    color: var(--gray);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Services Section */
+.services-section {
+    padding: 5rem 0;
+    background-color: var(--white);
+}
+
+.service-card {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+    margin-bottom: 5rem;
+    background-color: var(--ivory);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.service-card:nth-child(even) {
+    grid-template-columns: 1.2fr 1fr;
+}
+
+.service-card:nth-child(even) .service-image {
+    order: 2;
+}
+
+.service-card:nth-child(even) .service-content {
+    order: 1;
+}
+
+.service-image {
+    position: relative;
+    min-height: 500px;
+}
+
+.service-image .image-placeholder {
+    height: 100%;
+    min-height: 500px;
+    border-radius: 0;
+}
+
+.service-badge {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background-color: var(--gold);
+    color: var(--white);
+    padding: 0.5rem 1.25rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 12px rgba(155, 116, 70, 0.3);
+}
+
+.service-badge.badge-premium {
+    background: linear-gradient(135deg, #9B7446 0%, #C4975F 100%);
+}
+
+.service-badge.badge-new {
+    background-color: #10B981;
+}
+
+.service-content {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.service-title {
+    font-size: 2.5rem;
+    color: var(--charcoal);
+    margin-bottom: 0.5rem;
+}
+
+.service-description {
+    font-size: 1.125rem;
+    color: var(--gray);
+    line-height: 1.8;
+}
+
+.service-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(155, 116, 70, 0.2);
+    border-bottom: 1px solid rgba(155, 116, 70, 0.2);
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--charcoal);
+}
+
+.detail-icon {
+    color: var(--gold);
+    flex-shrink: 0;
+}
+
+.service-includes {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.includes-title {
+    font-size: 1.25rem;
+    color: var(--charcoal);
+    margin-bottom: 1rem;
+    font-family: var(--font-serif);
+}
+
+.includes-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.includes-list li {
+    padding-left: 1.75rem;
+    position: relative;
+    color: var(--gray);
+}
+
+.includes-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: bold;
+    font-size: 1.125rem;
+}
+
+.service-pricing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: auto;
+    padding-top: 1.5rem;
+}
+
+.price-tag {
+    display: flex;
+    flex-direction: column;
+}
+
+.price-label {
+    font-size: 0.875rem;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.price-amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--gold);
+    font-family: var(--font-serif);
+}
+
+/* Custom Packages CTA */
+.custom-packages-cta {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--blush) 0%, var(--ivory) 100%);
+    text-align: center;
+}
+
+.custom-cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.custom-cta-title {
+    font-size: 2.5rem;
+    color: var(--charcoal);
+    margin-bottom: 1rem;
+    font-family: var(--font-serif);
+}
+
+.custom-cta-text {
+    font-size: 1.125rem;
+    color: var(--gray);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+/* Add-ons Section */
+.addons-section {
+    padding: 5rem 0;
+    background-color: var(--white);
+}
+
+.addons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.addon-card {
+    background-color: var(--ivory);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.addon-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+    box-shadow: 0 6px 20px rgba(155, 116, 70, 0.15);
+}
+
+.addon-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.5rem;
+    background-color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+}
+
+.addon-title {
+    font-size: 1.25rem;
+    color: var(--charcoal);
+    margin-bottom: 0.75rem;
+    font-family: var(--font-serif);
+}
+
+.addon-description {
+    color: var(--gray);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.addon-price {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--gold);
+    font-family: var(--font-serif);
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 5rem 0;
+    background-color: var(--ivory);
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.faq-item {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 1.5rem 2rem;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    transition: var(--transition);
+}
+
+.faq-question:hover {
+    color: var(--gold);
+}
+
+.faq-icon {
+    color: var(--gold);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    padding: 0 2rem 1.5rem;
+}
+
+.faq-answer p {
+    color: var(--gray);
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* CTA Section Modifications for Services Page */
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 968px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+
+    .service-card,
+    .service-card:nth-child(even) {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card:nth-child(even) .service-image {
+        order: 1;
+    }
+
+    .service-card:nth-child(even) .service-content {
+        order: 2;
+    }
+
+    .service-image {
+        min-height: 400px;
+    }
+
+    .service-image .image-placeholder {
+        min-height: 400px;
+    }
+
+    .service-content {
+        padding: 2rem;
+    }
+
+    .service-title {
+        font-size: 2rem;
+    }
+
+    .addons-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .custom-cta-title {
+        font-size: 2rem;
+    }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 768px) {
+    .page-header {
+        padding: 4rem 0 3rem;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .page-subtitle {
+        font-size: 1rem;
+    }
+
+    .services-section {
+        padding: 3rem 0;
+    }
+
+    .service-card {
+        margin-bottom: 3rem;
+    }
+
+    .service-image {
+        min-height: 300px;
+    }
+
+    .service-image .image-placeholder {
+        min-height: 300px;
+    }
+
+    .service-badge {
+        top: 1rem;
+        right: 1rem;
+        padding: 0.4rem 1rem;
+        font-size: 0.75rem;
+    }
+
+    .service-content {
+        padding: 1.5rem;
+    }
+
+    .service-title {
+        font-size: 1.75rem;
+    }
+
+    .service-description {
+        font-size: 1rem;
+    }
+
+    .service-pricing {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .price-amount {
+        font-size: 2rem;
+    }
+
+    .service-pricing .btn {
+        width: 100%;
+    }
+
+    .addons-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .custom-cta-title {
+        font-size: 1.75rem;
+    }
+
+    .custom-cta-text {
+        font-size: 1rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+    }
+
+    .faq-question {
+        padding: 1.25rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .faq-item.active .faq-answer {
+        padding: 0 1.5rem 1.25rem;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 1.75rem;
+    }
+
+    .service-title {
+        font-size: 1.5rem;
+    }
+
+    .service-content {
+        padding: 1.25rem;
+        gap: 1.25rem;
+    }
+
+    .detail-item {
+        font-size: 0.9rem;
+    }
+
+    .price-amount {
+        font-size: 1.75rem;
+    }
+
+    .addon-card {
+        padding: 1.5rem;
+    }
+
+    .addon-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 1rem;
+    }
+
+    .addon-icon svg {
+        width: 30px;
+        height: 30px;
+    }
+}
