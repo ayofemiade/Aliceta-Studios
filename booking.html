@@ -3,357 +3,503 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book a Session | Aliceta Studios</title>
-    <meta name="description" content="Book your photography or makeup session with Aliceta Studios. Choose your service, select a date, and secure your booking in minutes.">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/accessibility.css">
-    <link rel="stylesheet" href="css/booking.css">
+    <title>Book a Session — Aliceta Studios</title>
+    <meta name="description" content="Book your portrait, wedding, or fashion photography session with Taiwo O. Oliyide. Easy online booking with flexible scheduling.">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/booking.css">
 </head>
 <body>
-    <!-- Skip to content link for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html" aria-label="Aliceta Studios Home">
-                    <h1>Aliceta Studios</h1>
-                </a>
-            </div>
-            <nav class="main-nav" aria-label="Main navigation">
-                <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-list">
-                    <span class="hamburger"></span>
-                </button>
-                <ul class="nav-list" id="nav-list">
-                    <li><a href="index.html#home">Home</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="index.html#portfolio">Portfolio</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                    <li><a href="booking.html" class="cta active" aria-current="page">Book a Session</a></li>
-                </ul>
-            </nav>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Aliceta Studios</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="index.html#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="index.html#testimonials" class="nav-link">Testimonials</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="booking.html" class="btn btn-primary nav-cta">Book a Session</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
-    <!-- Main Content -->
-    <main id="main-content">
-        <section class="booking-hero">
-            <div class="container">
-                <h1>Book Your Session</h1>
-                <p>Book your session in 3 easy steps: choose a service, pick a date, and secure your booking with a deposit. Need a custom package or makeup training? <a href="index.html#contact">Contact us</a>.</p>
+    <!-- Booking Hero -->
+    <section class="booking-hero">
+        <div class="container">
+            <h1 class="booking-title">Book Your Session</h1>
+            <p class="booking-subtitle">Choose your service, pick a date, and secure your booking in 3 easy steps</p>
+        </div>
+    </section>
+
+    <!-- Booking Progress -->
+    <section class="booking-progress-section">
+        <div class="container">
+            <div class="progress-bar">
+                <div class="progress-step active" data-step="1">
+                    <div class="step-circle">1</div>
+                    <span class="step-label">Service</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="2">
+                    <div class="step-circle">2</div>
+                    <span class="step-label">Date & Time</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="3">
+                    <div class="step-circle">3</div>
+                    <span class="step-label">Your Details</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="4">
+                    <div class="step-circle">4</div>
+                    <span class="step-label">Confirm & Pay</span>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="booking-section">
-            <div class="container">
-                <div class="booking-progress">
-                    <div class="progress-step active" data-step="1">
-                        <span class="step-number">1</span>
-                        <span class="step-name">Service</span>
-                    </div>
-                    <div class="progress-step" data-step="2">
-                        <span class="step-number">2</span>
-                        <span class="step-name">Date & Time</span>
-                    </div>
-                    <div class="progress-step" data-step="3">
-                        <span class="step-number">3</span>
-                        <span class="step-name">Details</span>
-                    </div>
-                    <div class="progress-step" data-step="4">
-                        <span class="step-number">4</span>
-                        <span class="step-name">Confirm</span>
-                    </div>
+    <!-- Booking Form Container -->
+    <section class="booking-form-section">
+        <div class="container">
+            <div class="booking-layout">
+                <!-- Main Form Area -->
+                <div class="booking-form-container">
+                    <form id="bookingForm" class="booking-form">
+                        
+                        <!-- Step 1: Service Selection -->
+                        <div class="form-step active" data-step="1">
+                            <h2 class="step-title">Select Your Service</h2>
+                            <p class="step-description">Choose the photography service that best suits your needs</p>
+                            
+                            <div class="service-grid">
+                                <label class="service-card">
+                                    <input type="radio" name="service" value="portrait" required>
+                                    <div class="service-content">
+                                        <div class="service-icon">📸</div>
+                                        <h3 class="service-name">Portrait Photography</h3>
+                                        <p class="service-description">Professional headshots and personal portraits</p>
+                                        <p class="service-price">Starting from ₦50,000</p>
+                                        <ul class="service-includes">
+                                            <li>1-2 hour session</li>
+                                            <li>Studio or outdoor location</li>
+                                            <li>20+ edited photos</li>
+                                            <li>Online gallery</li>
+                                        </ul>
+                                    </div>
+                                </label>
+
+                                <label class="service-card">
+                                    <input type="radio" name="service" value="wedding" required>
+                                    <div class="service-content">
+                                        <div class="service-icon">💍</div>
+                                        <h3 class="service-name">Wedding Photography</h3>
+                                        <p class="service-description">Full-day wedding coverage</p>
+                                        <p class="service-price">Starting from ₦250,000</p>
+                                        <ul class="service-includes">
+                                            <li>Full day coverage</li>
+                                            <li>Pre-wedding shoot option</li>
+                                            <li>500+ edited photos</li>
+                                            <li>Highlight video included</li>
+                                        </ul>
+                                    </div>
+                                </label>
+
+                                <label class="service-card">
+                                    <input type="radio" name="service" value="fashion" required>
+                                    <div class="service-content">
+                                        <div class="service-icon">👗</div>
+                                        <h3 class="service-name">Fashion Photography</h3>
+                                        <p class="service-description">Editorial and lookbook shoots</p>
+                                        <p class="service-price">Starting from ₦80,000</p>
+                                        <ul class="service-includes">
+                                            <li>2-3 hour session</li>
+                                            <li>Multiple outfit changes</li>
+                                            <li>50+ edited photos</li>
+                                            <li>Commercial use rights</li>
+                                        </ul>
+                                    </div>
+                                </label>
+
+                                <label class="service-card">
+                                    <input type="radio" name="service" value="makeup" required>
+                                    <div class="service-content">
+                                        <div class="service-icon">💄</div>
+                                        <h3 class="service-name">Makeup Services</h3>
+                                        <p class="service-description">Professional makeup for any occasion</p>
+                                        <p class="service-price">Starting from ₦25,000</p>
+                                        <ul class="service-includes">
+                                            <li>Bridal makeup</li>
+                                            <li>Event makeup</li>
+                                            <li>Editorial makeup</li>
+                                            <li>Makeup consultation</li>
+                                        </ul>
+                                    </div>
+                                </label>
+
+                                <label class="service-card">
+                                    <input type="radio" name="service" value="training" required>
+                                    <div class="service-content">
+                                        <div class="service-icon">🎓</div>
+                                        <h3 class="service-name">Makeup Training</h3>
+                                        <p class="service-description">Professional makeup workshops</p>
+                                        <p class="service-price">Starting from ₦150,000</p>
+                                        <ul class="service-includes">
+                                            <li>6-week program</li>
+                                            <li>Hands-on training</li>
+                                            <li>Starter kit included</li>
+                                            <li>Certificate of completion</li>
+                                        </ul>
+                                    </div>
+                                </label>
+
+                                <label class="service-card">
+                                    <input type="radio" name="service" value="custom" required>
+                                    <div class="service-content">
+                                        <div class="service-icon">✨</div>
+                                        <h3 class="service-name">Custom Package</h3>
+                                        <p class="service-description">Tailored to your specific needs</p>
+                                        <p class="service-price">Contact for pricing</p>
+                                        <ul class="service-includes">
+                                            <li>Personalized planning</li>
+                                            <li>Flexible duration</li>
+                                            <li>Custom deliverables</li>
+                                            <li>Special requests welcome</li>
+                                        </ul>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-primary btn-large btn-next">Continue to Date Selection</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Date & Time Selection -->
+                        <div class="form-step" data-step="2">
+                            <h2 class="step-title">Choose Your Date & Time</h2>
+                            <p class="step-description">Select your preferred date and time for the session</p>
+                            
+                            <div class="date-time-container">
+                                <div class="calendar-container">
+                                    <div class="calendar-header">
+                                        <button type="button" class="calendar-nav" id="prevMonth">‹</button>
+                                        <h3 class="calendar-title" id="calendarTitle">January 2025</h3>
+                                        <button type="button" class="calendar-nav" id="nextMonth">›</button>
+                                    </div>
+                                    <div class="calendar-body" id="calendarBody">
+                                        <!-- Calendar will be generated by JavaScript -->
+                                    </div>
+                                    <input type="hidden" name="date" id="selectedDate" required>
+                                </div>
+
+                                <div class="time-slots-container">
+                                    <h3 class="time-slots-title">Available Time Slots</h3>
+                                    <p class="time-slots-subtitle" id="selectedDateDisplay">Select a date to see available times</p>
+                                    
+                                    <div class="time-slots" id="timeSlots">
+                                        <!-- Time slots will be generated by JavaScript -->
+                                    </div>
+                                    <input type="hidden" name="time" id="selectedTime" required>
+                                </div>
+                            </div>
+
+                            <div class="location-selection">
+                                <h3 class="location-title">Session Location</h3>
+                                <div class="location-options">
+                                    <label class="location-card">
+                                        <input type="radio" name="location" value="studio" required>
+                                        <div class="location-content">
+                                            <div class="location-icon">🏢</div>
+                                            <h4>Studio Session</h4>
+                                            <p>Professional studio in Lagos</p>
+                                        </div>
+                                    </label>
+                                    <label class="location-card">
+                                        <input type="radio" name="location" value="outdoor" required>
+                                        <div class="location-content">
+                                            <div class="location-icon">🌳</div>
+                                            <h4>Outdoor Location</h4>
+                                            <p>Your preferred outdoor venue</p>
+                                        </div>
+                                    </label>
+                                    <label class="location-card">
+                                        <input type="radio" name="location" value="client" required>
+                                        <div class="location-content">
+                                            <div class="location-icon">📍</div>
+                                            <h4>Your Location</h4>
+                                            <p>We come to you</p>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary btn-large btn-prev">Back</button>
+                                <button type="button" class="btn btn-primary btn-large btn-next">Continue to Details</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Client Details -->
+                        <div class="form-step" data-step="3">
+                            <h2 class="step-title">Your Information</h2>
+                            <p class="step-description">Tell us a bit about yourself and your session needs</p>
+                            
+                            <div class="form-grid">
+                                <div class="form-group full-width">
+                                    <label for="fullName">Full Name *</label>
+                                    <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required placeholder="your@email.com">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" required placeholder="+234 800 000 0000">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="numPeople">Number of People</label>
+                                    <select id="numPeople" name="numPeople">
+                                        <option value="1">Just me</option>
+                                        <option value="2">2 people</option>
+                                        <option value="3-5">3-5 people</option>
+                                        <option value="6-10">6-10 people</option>
+                                        <option value="10+">More than 10</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="occasion">Occasion/Purpose</label>
+                                    <input type="text" id="occasion" name="occasion" placeholder="e.g., Birthday, Corporate event">
+                                </div>
+
+                                <div class="form-group full-width">
+                                    <label for="specificLocation">Specific Location (if not studio)</label>
+                                    <input type="text" id="specificLocation" name="specificLocation" placeholder="Enter address or venue name">
+                                </div>
+
+                                <div class="form-group full-width">
+                                    <label for="specialRequests">Special Requests or Notes</label>
+                                    <textarea id="specialRequests" name="specialRequests" rows="4" placeholder="Any specific requirements, themes, or questions?"></textarea>
+                                </div>
+
+                                <div class="form-group full-width">
+                                    <h3 class="addon-title">Add-Ons (Optional)</h3>
+                                    <div class="addon-options">
+                                        <label class="addon-checkbox">
+                                            <input type="checkbox" name="addons" value="hair">
+                                            <span>Professional Hair Styling (+₦15,000)</span>
+                                        </label>
+                                        <label class="addon-checkbox">
+                                            <input type="checkbox" name="addons" value="extra-looks">
+                                            <span>Extra Outfit/Look Changes (+₦10,000)</span>
+                                        </label>
+                                        <label class="addon-checkbox">
+                                            <input type="checkbox" name="addons" value="prints">
+                                            <span>Printed Photo Package (+₦25,000)</span>
+                                        </label>
+                                        <label class="addon-checkbox">
+                                            <input type="checkbox" name="addons" value="album">
+                                            <span>Premium Photo Album (+₦50,000)</span>
+                                        </label>
+                                        <label class="addon-checkbox">
+                                            <input type="checkbox" name="addons" value="rush">
+                                            <span>Rush Delivery (48 hours) (+₦20,000)</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group full-width">
+                                    <label for="promoCode">Promo Code (Optional)</label>
+                                    <div class="promo-input-group">
+                                        <input type="text" id="promoCode" name="promoCode" placeholder="Enter promo code">
+                                        <button type="button" class="btn btn-secondary" id="applyPromo">Apply</button>
+                                    </div>
+                                    <span class="promo-message" id="promoMessage"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary btn-large btn-prev">Back</button>
+                                <button type="button" class="btn btn-primary btn-large btn-next">Review Booking</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Confirmation & Payment -->
+                        <div class="form-step" data-step="4">
+                            <h2 class="step-title">Review & Confirm</h2>
+                            <p class="step-description">Please review your booking details before confirming</p>
+                            
+                            <div class="confirmation-container">
+                                <div class="booking-summary-card">
+                                    <h3 class="summary-title">Booking Summary</h3>
+                                    
+                                    <div class="summary-section">
+                                        <h4 class="summary-label">Service</h4>
+                                        <p class="summary-value" id="summaryService">-</p>
+                                    </div>
+
+                                    <div class="summary-section">
+                                        <h4 class="summary-label">Date & Time</h4>
+                                        <p class="summary-value" id="summaryDateTime">-</p>
+                                    </div>
+
+                                    <div class="summary-section">
+                                        <h4 class="summary-label">Location</h4>
+                                        <p class="summary-value" id="summaryLocation">-</p>
+                                    </div>
+
+                                    <div class="summary-section">
+                                        <h4 class="summary-label">Contact</h4>
+                                        <p class="summary-value" id="summaryContact">-</p>
+                                    </div>
+
+                                    <div class="summary-section" id="addonsSection" style="display: none;">
+                                        <h4 class="summary-label">Add-Ons</h4>
+                                        <ul class="summary-addons" id="summaryAddons"></ul>
+                                    </div>
+
+                                    <div class="summary-pricing">
+                                        <div class="price-row">
+                                            <span>Base Price</span>
+                                            <span id="basePrice">₦0</span>
+                                        </div>
+                                        <div class="price-row" id="addonsPrice" style="display: none;">
+                                            <span>Add-Ons</span>
+                                            <span id="addonsPriceValue">₦0</span>
+                                        </div>
+                                        <div class="price-row" id="discountRow" style="display: none;">
+                                            <span>Discount</span>
+                                            <span id="discountValue">-₦0</span>
+                                        </div>
+                                        <div class="price-row total">
+                                            <span>Total</span>
+                                            <span id="totalPrice">₦0</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="payment-options-card">
+                                    <h3 class="payment-title">Payment Options</h3>
+                                    
+                                    <div class="payment-methods">
+                                        <label class="payment-card">
+                                            <input type="radio" name="payment" value="deposit" checked>
+                                            <div class="payment-content">
+                                                <h4>Pay Deposit (50%)</h4>
+                                                <p class="payment-amount" id="depositAmount">₦0</p>
+                                                <p class="payment-description">Secure your booking with a 50% deposit. Balance due on session day.</p>
+                                            </div>
+                                        </label>
+
+                                        <label class="payment-card">
+                                            <input type="radio" name="payment" value="full">
+                                            <div class="payment-content">
+                                                <h4>Pay Full Amount</h4>
+                                                <p class="payment-amount" id="fullAmount">₦0</p>
+                                                <p class="payment-description">Pay the full amount now and save 5%.</p>
+                                            </div>
+                                        </label>
+                                    </div>
+
+                                    <div class="agreement-section">
+                                        <label class="agreement-checkbox">
+                                            <input type="checkbox" name="terms" id="termsCheckbox" required>
+                                            <span>I agree to the <a href="#">cancellation policy</a> and <a href="#">terms of service</a></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary btn-large btn-prev">Back</button>
+                                <button type="submit" class="btn btn-primary btn-large" id="confirmBooking">Confirm & Pay</button>
+                            </div>
+                        </div>
+
+                    </form>
                 </div>
 
-                <form id="bookingForm" class="booking-form">
-                    <!-- Step 1: Service Selection -->
-                    <div class="form-step active" data-step="1">
-                        <h2>Select a Service</h2>
-                        <div class="service-options">
-                            <div class="service-option">
-                                <input type="radio" name="service" id="portrait" value="portrait" required>
-                                <label for="portrait">
-                                    <h3>Portrait Photography</h3>
-                                    <p>Professional portrait sessions capturing your unique personality and style.</p>
-                                    <p class="service-price">Starting from: $250</p>
-                                    <p class="service-duration">Duration: 1-2 hours</p>
-                                    <p class="service-includes">Includes: 5 edited digital photos</p>
-                                </label>
-                            </div>
-                            <div class="service-option">
-                                <input type="radio" name="service" id="wedding" value="wedding">
-                                <label for="wedding">
-                                    <h3>Wedding Photography</h3>
-                                    <p>Comprehensive wedding coverage to document your special day.</p>
-                                    <p class="service-price">Starting from: $1,500</p>
-                                    <p class="service-duration">Duration: 6-8 hours</p>
-                                    <p class="service-includes">Includes: Full day coverage, 100+ edited photos, online gallery</p>
-                                </label>
-                            </div>
-                            <div class="service-option">
-                                <input type="radio" name="service" id="fashion" value="fashion">
-                                <label for="fashion">
-                                    <h3>Fashion Photography</h3>
-                                    <p>Creative fashion shoots for models, designers, and brands.</p>
-                                    <p class="service-price">Starting from: $500</p>
-                                    <p class="service-duration">Duration: 3-4 hours</p>
-                                    <p class="service-includes">Includes: 10 edited digital photos, styling consultation</p>
-                                </label>
-                            </div>
-                            <div class="service-option">
-                                <input type="radio" name="service" id="makeup" value="makeup">
-                                <label for="makeup">
-                                    <h3>Makeup Services</h3>
-                                    <p>Professional makeup application for events, photoshoots, or special occasions.</p>
-                                    <p class="service-price">Starting from: $150</p>
-                                    <p class="service-duration">Duration: 1-1.5 hours</p>
-                                    <p class="service-includes">Includes: Full face makeup, lashes, touch-up kit</p>
-                                </label>
-                            </div>
-                            <div class="service-option">
-                                <input type="radio" name="service" id="training" value="training">
-                                <label for="training">
-                                    <h3>Makeup Training</h3>
-                                    <p>One-on-one or group makeup training sessions.</p>
-                                    <p class="service-price">Starting from: $300</p>
-                                    <p class="service-duration">Duration: 3-4 hours</p>
-                                    <p class="service-includes">Includes: Training materials, certificate of completion</p>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="form-navigation">
-                            <button type="button" class="btn btn-primary next-step">Continue to Date & Time</button>
-                        </div>
+                <!-- Sidebar Summary (Desktop) -->
+                <div class="booking-sidebar">
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">Need Help?</h3>
+                        <p class="sidebar-text">Have questions about your booking? We're here to help!</p>
+                        <a href="tel:+2348000000000" class="sidebar-link">📞 +234 800 000 0000</a>
+                        <a href="mailto:hello@alicetastudios.com" class="sidebar-link">✉️ hello@alicetastudios.com</a>
                     </div>
 
-                    <!-- Step 2: Date & Time Selection -->
-                    <div class="form-step" data-step="2">
-                        <h2>Select Date & Time</h2>
-                        <div class="form-group">
-                            <label for="booking-date">Preferred Date</label>
-                            <input type="text" id="booking-date" name="booking-date" class="date-picker" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="booking-time">Preferred Time</label>
-                            <select id="booking-time" name="booking-time" required>
-                                <option value="">Select a time</option>
-                                <option value="09:00">9:00 AM</option>
-                                <option value="10:00">10:00 AM</option>
-                                <option value="11:00">11:00 AM</option>
-                                <option value="12:00">12:00 PM</option>
-                                <option value="13:00">1:00 PM</option>
-                                <option value="14:00">2:00 PM</option>
-                                <option value="15:00">3:00 PM</option>
-                                <option value="16:00">4:00 PM</option>
-                                <option value="17:00">5:00 PM</option>
-                            </select>
-                        </div>
-                        <div class="form-navigation">
-                            <button type="button" class="btn btn-secondary prev-step">Back</button>
-                            <button type="button" class="btn btn-primary next-step">Continue to Details</button>
-                        </div>
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">Cancellation Policy</h3>
+                        <ul class="policy-list">
+                            <li>Free cancellation up to 48 hours before session</li>
+                            <li>50% refund for cancellations 24-48 hours prior</li>
+                            <li>No refund for same-day cancellations</li>
+                            <li>Rescheduling is always free</li>
+                        </ul>
                     </div>
 
-                    <!-- Step 3: Client Details -->
-                    <div class="form-step" data-step="3">
-                        <h2>Your Details</h2>
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="location">Location</label>
-                            <select id="location" name="location" required>
-                                <option value="">Select location</option>
-                                <option value="studio">Studio Session</option>
-                                <option value="onsite">On-site (Client Location)</option>
-                            </select>
-                        </div>
-                        <div class="form-group location-details" style="display: none;">
-                            <label for="address">Address</label>
-                            <textarea id="address" name="address" rows="3"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="people">Number of People</label>
-                            <input type="number" id="people" name="people" min="1" value="1" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="notes">Special Requests or Notes</label>
-                            <textarea id="notes" name="notes" rows="3"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="addons">Add-ons (Optional)</label>
-                            <div class="addon-options">
-                                <div class="addon-option">
-                                    <input type="checkbox" id="hair" name="addons[]" value="hair">
-                                    <label for="hair">Hair Styling (+$75)</label>
-                                </div>
-                                <div class="addon-option">
-                                    <input type="checkbox" id="extra-looks" name="addons[]" value="extra-looks">
-                                    <label for="extra-looks">Extra Looks/Outfit Changes (+$50 per look)</label>
-                                </div>
-                                <div class="addon-option">
-                                    <input type="checkbox" id="prints" name="addons[]" value="prints">
-                                    <label for="prints">Print Package (+$100)</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="promo">Promo Code (Optional)</label>
-                            <input type="text" id="promo" name="promo">
-                        </div>
-                        <div class="form-group terms-checkbox">
-                            <input type="checkbox" id="terms" name="terms" required>
-                            <label for="terms">I agree to the <a href="#" class="terms-link">cancellation policy and terms</a></label>
-                        </div>
-                        <div class="form-navigation">
-                            <button type="button" class="btn btn-secondary prev-step">Back</button>
-                            <button type="button" class="btn btn-primary next-step">Review & Confirm</button>
-                        </div>
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">What to Expect</h3>
+                        <ul class="policy-list">
+                            <li>Confirmation email within 1 hour</li>
+                            <li>Reminder 48 hours before</li>
+                            <li>Photos delivered within 7-14 days</li>
+                            <li>Online gallery for selection</li>
+                        </ul>
                     </div>
-
-                    <!-- Step 4: Confirmation -->
-                    <div class="form-step" data-step="4">
-                        <h2>Review & Confirm</h2>
-                        <div class="booking-summary">
-                            <h3>Booking Summary</h3>
-                            <div class="summary-item">
-                                <span class="summary-label">Service:</span>
-                                <span class="summary-value" id="summary-service"></span>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-label">Date & Time:</span>
-                                <span class="summary-value" id="summary-datetime"></span>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-label">Name:</span>
-                                <span class="summary-value" id="summary-name"></span>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-label">Email:</span>
-                                <span class="summary-value" id="summary-email"></span>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-label">Phone:</span>
-                                <span class="summary-value" id="summary-phone"></span>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-label">Location:</span>
-                                <span class="summary-value" id="summary-location"></span>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-label">People:</span>
-                                <span class="summary-value" id="summary-people"></span>
-                            </div>
-                            <div class="summary-item" id="summary-addons-container">
-                                <span class="summary-label">Add-ons:</span>
-                                <span class="summary-value" id="summary-addons">None</span>
-                            </div>
-                            <div class="summary-item">
-                                <span class="summary-label">Notes:</span>
-                                <span class="summary-value" id="summary-notes">None</span>
-                            </div>
-                        </div>
-
-                        <div class="price-summary">
-                            <h3>Price Summary</h3>
-                            <div class="price-item">
-                                <span class="price-label">Base Price:</span>
-                                <span class="price-value" id="base-price">$0</span>
-                            </div>
-                            <div class="price-item" id="addons-price-container">
-                                <span class="price-label">Add-ons:</span>
-                                <span class="price-value" id="addons-price">$0</span>
-                            </div>
-                            <div class="price-item total">
-                                <span class="price-label">Total:</span>
-                                <span class="price-value" id="total-price">$0</span>
-                            </div>
-                            <div class="price-item">
-                                <span class="price-label">Required Deposit (50%):</span>
-                                <span class="price-value" id="deposit-price">$0</span>
-                            </div>
-                        </div>
-
-                        <div class="payment-options">
-                            <h3>Payment Options</h3>
-                            <div class="payment-option">
-                                <input type="radio" name="payment" id="deposit" value="deposit" checked>
-                                <label for="deposit">Pay Deposit Now</label>
-                            </div>
-                            <div class="payment-option">
-                                <input type="radio" name="payment" id="full" value="full">
-                                <label for="full">Pay Full Amount Now</label>
-                            </div>
-                        </div>
-
-                        <div class="form-navigation">
-                            <button type="button" class="btn btn-secondary prev-step">Back</button>
-                            <button type="submit" class="btn btn-primary">Complete Booking</button>
-                        </div>
-                    </div>
-
-                    <!-- Success Message (Hidden by default) -->
-                    <div class="form-step success-step">
-                        <div class="success-message">
-                            <i class="fas fa-check-circle"></i>
-                            <h2>Booking Confirmed!</h2>
-                            <p>Thank you for booking with Aliceta Studios. A confirmation email has been sent to your email address.</p>
-                            <div class="calendar-buttons">
-                                <a href="#" class="btn btn-secondary" id="add-to-google">Add to Google Calendar</a>
-                                <a href="#" class="btn btn-secondary" id="add-to-ical">Add to Apple Calendar</a>
-                            </div>
-                            <p>If you need to reschedule or cancel your appointment, please contact us at least 48 hours in advance.</p>
-                            <a href="index.html" class="btn btn-primary">Return to Homepage</a>
-                        </div>
-                    </div>
-                </form>
+                </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <h2>Aliceta Studios</h2>
-                    <p>Capturing moments, creating memories</p>
+                <div class="footer-section">
+                    <h3 class="footer-title">Aliceta Studios</h3>
+                    <p class="footer-text">Professional portrait, wedding, and fashion photography in Lagos.</p>
                 </div>
-                <div class="footer-links">
-                    <ul>
-                        <li><a href="index.html#home">Home</a></li>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
                         <li><a href="index.html#about">About</a></li>
                         <li><a href="index.html#services">Services</a></li>
                         <li><a href="index.html#portfolio">Portfolio</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
                     </ul>
                 </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Contact</h4>
+                    <p class="footer-text">📞 +234 800 000 0000</p>
+                    <p class="footer-text">✉️ hello@alicetastudios.com</p>
+                </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2023 Aliceta Studios. All rights reserved.</p>
+                <p>&copy; 2025 Aliceta Studios. All rights reserved.</p>
             </div>
         </div>
     </footer>
-<!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="js/main.js"></script>
+
     <script src="js/booking.js"></script>
-    <script src="js/accessibility.js"></script>
-    <script src="js/performance.js"></script>
 </body>
 </html>
