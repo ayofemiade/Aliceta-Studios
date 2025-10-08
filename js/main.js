@@ -1,187 +1,310 @@
-/**
- * Aliceta Studios - Main JavaScript
- * Handles navigation, animations, and interactive elements
- */
+// Mobile Menu Toggle
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
+const navLinks = document.querySelectorAll('.nav-link');
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navList = document.querySelector('.nav-list');
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
     
-    if (menuToggle && navList) {
-        menuToggle.addEventListener('click', function() {
-            this.classList.toggle('active');
-            navList.classList.toggle('active');
-        });
+    // Animate hamburger menu
+    const spans = menuToggle.querySelectorAll('span');
+    if (navMenu.classList.contains('active')) {
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+    } else {
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
     }
-    
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(event) {
-        if (!event.target.closest('.main-nav') && navList.classList.contains('active')) {
-            menuToggle.classList.remove('active');
-            navList.classList.remove('active');
-        }
-    });
-    
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                // Close mobile menu if open
-                if (navList.classList.contains('active')) {
-                    menuToggle.classList.remove('active');
-                    navList.classList.remove('active');
-                }
-                
-                // Scroll to target
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80, // Account for fixed header
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    // Form validation
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Basic validation
-            let valid = true;
-            const name = document.getElementById('name');
-            const email = document.getElementById('email');
-            const message = document.getElementById('message');
-            
-            // Reset error states
-            [name, email, message].forEach(field => {
-                field.classList.remove('error');
-            });
-            
-            // Validate name
-            if (!name.value.trim()) {
-                name.classList.add('error');
-                valid = false;
-            }
-            
-            // Validate email
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!email.value.trim() || !emailRegex.test(email.value)) {
-                email.classList.add('error');
-                valid = false;
-            }
-            
-            // Validate message
-            if (!message.value.trim()) {
-                message.classList.add('error');
-                valid = false;
-            }
-            
-            if (valid) {
-                // In a real application, you would send the form data to a server
-                // For now, we'll just show a success message
-                const formContainer = contactForm.parentElement;
-                const successMessage = document.createElement('div');
-                successMessage.className = 'success-message';
-                successMessage.innerHTML = '<p>Thank you for your message! We will get back to you soon.</p>';
-                
-                formContainer.innerHTML = '';
-                formContainer.appendChild(successMessage);
-            }
-        });
-    }
-    
-    // Portfolio items (sample data - would be loaded from a CMS in production)
-    const portfolioItems = [
-        {
-            id: 1,
-            title: 'Wedding Photography',
-            category: 'wedding',
-            image: 'images/portfolio-1.jpg',
-            alt: 'Elegant wedding photography by Aliceta Studios'
-        },
-        {
-            id: 2,
-            title: 'Portrait Session',
-            category: 'portrait',
-            image: 'images/portfolio-2.jpg',
-            alt: 'Professional portrait photography'
-        },
-        {
-            id: 3,
-            title: 'Fashion Editorial',
-            category: 'fashion',
-            image: 'images/portfolio-3.jpg',
-            alt: 'High-end fashion photography'
-        }
-    ];
-    
-    // Populate portfolio grid
-    const portfolioGrid = document.querySelector('.portfolio-grid');
-    if (portfolioGrid) {
-        portfolioItems.forEach(item => {
-            const portfolioItem = document.createElement('div');
-            portfolioItem.className = 'portfolio-item';
-            portfolioItem.setAttribute('data-category', item.category);
-            
-            portfolioItem.innerHTML = `
-                <a href="portfolio.html#${item.id}">
-                    <div class="portfolio-image">
-                        <img src="${item.image}" alt="${item.alt}">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>${item.title}</h3>
-                        <p>${item.category}</p>
-                    </div>
-                </a>
-            `;
-            
-            portfolioGrid.appendChild(portfolioItem);
-        });
-    }
-    
-    // Scroll animations
-    const animateElements = document.querySelectorAll('.section');
-    
-    const observerOptions = {
-        threshold: 0.1
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-    
-    animateElements.forEach(element => {
-        observer.observe(element);
-    });
-    
-    // Header scroll effect
-    const header = document.querySelector('.header');
-    let lastScrollTop = 0;
-    
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (scrollTop > lastScrollTop && scrollTop > 200) {
-            // Scrolling down
-            header.style.transform = 'translateY(-100%)';
-        } else {
-            // Scrolling up
-            header.style.transform = 'translateY(0)';
-        }
-        
-        lastScrollTop = scrollTop;
+});
+
+// Close mobile menu when clicking on a link
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        const spans = menuToggle.querySelectorAll('span');
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
     });
 });
+
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 100) {
+        navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+    } else {
+        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+    }
+    
+    lastScroll = currentScroll;
+});
+
+// Portfolio Carousel
+const carousel = document.getElementById('portfolioCarousel');
+const track = carousel.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+const nextButton = carousel.querySelector('.carousel-next');
+const prevButton = carousel.querySelector('.carousel-prev');
+const dotsContainer = document.getElementById('carouselDots');
+
+let currentIndex = 0;
+
+// Create dots
+slides.forEach((_, index) => {
+    const dot = document.createElement('button');
+    dot.classList.add('carousel-dot');
+    if (index === 0) dot.classList.add('active');
+    dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+    dot.addEventListener('click', () => goToSlide(index));
+    dotsContainer.appendChild(dot);
+});
+
+const dots = Array.from(dotsContainer.children);
+
+function updateCarousel() {
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    
+    // Update dots
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+    });
+    
+    // Update button states
+    prevButton.disabled = currentIndex === 0;
+    nextButton.disabled = currentIndex === slides.length - 1;
+    
+    prevButton.style.opacity = currentIndex === 0 ? '0.5' : '1';
+    nextButton.style.opacity = currentIndex === slides.length - 1 ? '0.5' : '1';
+}
+
+function goToSlide(index) {
+    currentIndex = index;
+    updateCarousel();
+}
+
+function nextSlide() {
+    if (currentIndex < slides.length - 1) {
+        currentIndex++;
+        updateCarousel();
+    }
+}
+
+function prevSlide() {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+    }
+}
+
+nextButton.addEventListener('click', nextSlide);
+prevButton.addEventListener('click', prevSlide);
+
+// Auto-play carousel
+let autoplayInterval = setInterval(nextSlide, 5000);
+
+// Pause autoplay on hover
+carousel.addEventListener('mouseenter', () => {
+    clearInterval(autoplayInterval);
+});
+
+carousel.addEventListener('mouseleave', () => {
+    autoplayInterval = setInterval(nextSlide, 5000);
+});
+
+// Reset to first slide when reaching the end
+track.addEventListener('transitionend', () => {
+    if (currentIndex === slides.length - 1) {
+        setTimeout(() => {
+            currentIndex = 0;
+            updateCarousel();
+        }, 3000);
+    }
+});
+
+// Handle window resize for carousel
+let resizeTimeout;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        updateCarousel();
+    }, 250);
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        
+        if (target) {
+            const navHeight = navbar.offsetHeight;
+            const targetPosition = target.offsetTop - navHeight - 20;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Intersection Observer for fade-in animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Observe sections for animation
+const sections = document.querySelectorAll('.highlights, .portfolio-preview, .testimonials, .partners, .cta-section');
+sections.forEach(section => {
+    section.style.opacity = '0';
+    section.style.transform = 'translateY(30px)';
+    section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+    observer.observe(section);
+});
+
+// Observe individual cards for staggered animation
+const cards = document.querySelectorAll('.highlight-item, .testimonial-card');
+cards.forEach((card, index) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+    observer.observe(card);
+});
+
+// Mobile sticky CTA visibility
+const mobileCta = document.getElementById('mobileCta');
+const heroSection = document.querySelector('.hero');
+
+const ctaObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (window.innerWidth <= 768) {
+            if (!entry.isIntersecting) {
+                mobileCta.style.transform = 'translateY(0)';
+            } else {
+                mobileCta.style.transform = 'translateY(100%)';
+            }
+        }
+    });
+}, { threshold: 0.1 });
+
+mobileCta.style.transition = 'transform 0.3s ease';
+mobileCta.style.transform = 'translateY(100%)';
+ctaObserver.observe(heroSection);
+
+// Newsletter form submission
+const newsletterForm = document.querySelector('.newsletter-form');
+newsletterForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const emailInput = newsletterForm.querySelector('input[type="email"]');
+    const submitButton = newsletterForm.querySelector('button');
+    
+    // Simulate form submission
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Subscribing...';
+    submitButton.disabled = true;
+    
+    setTimeout(() => {
+        submitButton.textContent = 'Subscribed!';
+        submitButton.style.backgroundColor = '#22c55e';
+        emailInput.value = '';
+        
+        setTimeout(() => {
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+            submitButton.style.backgroundColor = '';
+        }, 2000);
+    }, 1000);
+});
+
+// Keyboard navigation for carousel
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+        prevSlide();
+    } else if (e.key === 'ArrowRight') {
+        nextSlide();
+    }
+});
+
+// Parallax effect for hero section (subtle)
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const heroImage = document.querySelector('.hero-image');
+    
+    if (heroImage && scrolled < window.innerHeight) {
+        heroImage.style.transform = `translateY(${scrolled * 0.3}px)`;
+    }
+});
+
+// Loading animation for images (when real images are added)
+const imageContainers = document.querySelectorAll('.image-placeholder');
+imageContainers.forEach(container => {
+    container.style.transition = 'opacity 0.5s ease';
+});
+
+// Add touch swipe support for carousel on mobile
+let touchStartX = 0;
+let touchEndX = 0;
+
+carousel.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+
+carousel.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+}, { passive: true });
+
+function handleSwipe() {
+    const swipeThreshold = 50;
+    
+    if (touchEndX < touchStartX - swipeThreshold) {
+        // Swipe left
+        nextSlide();
+    }
+    
+    if (touchEndX > touchStartX + swipeThreshold) {
+        // Swipe right
+        prevSlide();
+    }
+}
+
+// Performance optimization: Lazy loading for images
+if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                // When real images are added, replace placeholder with actual image
+                img.classList.add('loaded');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+    
+    imageContainers.forEach(img => imageObserver.observe(img));
+}
+
+// Console message
+console.log('%cAliceta Studios', 'font-size: 24px; font-weight: bold; color: #9B7446;');
+console.log('%cWebsite by Professional Web Development', 'font-size: 14px; color: #6B7280;');
+
+// Initialize carousel on page load
+updateCarousel();

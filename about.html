@@ -3,255 +3,356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about Aliceta Studios - a professional photography studio specializing in portraits, weddings, fashion, and makeup artistry.">
-    <title>About Us | Aliceta Studios</title>
+    <title>About — Aliceta Studios | Taiwo O. Oliyide</title>
+    <meta name="description" content="Meet Taiwo O. Oliyide - Professional photographer and makeup artist with over 10 years of experience. Trained 1,000+ makeup artists across Lagos.">
     
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/accessibility.css">
-    <link rel="stylesheet" href="css/about.css">
-    
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/about.css">
 </head>
 <body>
-    <!-- Skip to content link for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html" aria-label="Aliceta Studios Home">Aliceta Studios</a>
-            </div>
-            <nav class="main-nav" aria-label="Main navigation">
-                <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
-                    <span class="hamburger"></span>
-                </button>
-                <ul class="nav-menu" id="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" aria-current="page">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="booking.html">Booking</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Aliceta Studios</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="booking.html" class="btn btn-primary nav-cta">Book a Session</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
-    <!-- Main Content -->
-    <main id="main-content">
-        <!-- About Hero Section -->
-        <section class="about-hero">
-            <div class="container">
-                <h1>About Aliceta Studios</h1>
-                <p>Discover our story, our passion, and the team behind the lens</p>
-            </div>
-        </section>
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title">About Taiwo</h1>
+            <p class="page-subtitle">Where artistry meets storytelling</p>
+        </div>
+    </section>
 
-        <!-- Our Story Section -->
-        <section class="our-story section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Our Story</h2>
-                    <p class="subtitle">How Aliceta Studios came to be</p>
-                </div>
-                <div class="story-content">
-                    <div class="story-image">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='24' text-anchor='middle' dominant-baseline='middle' fill='%23999'%3EStudio Image%3C/text%3E%3C/svg%3E" alt="Aliceta Studios founder working in the studio" class="rounded-image">
+    <!-- About Main Section -->
+    <section class="about-main">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-section">
+                    <div class="image-placeholder about-portrait">
+                        <span class="placeholder-text">Professional Headshot<br>Taiwo O. Oliyide</span>
                     </div>
-                    <div class="story-text">
-                        <h3>From Passion to Profession</h3>
-                        <p>Aliceta Studios was founded in 2015 by Alice Taylor, a passionate photographer with over 15 years of experience in portrait and fashion photography. What started as a small home studio has grown into a full-service photography business serving clients across the region.</p>
-                        <p>Our journey began with a simple belief: that every person deserves to see themselves captured beautifully through professional photography. This philosophy continues to guide our work today as we help clients celebrate life's special moments and express their unique personalities through our lens.</p>
-                        <p>Over the years, we've expanded our services to include wedding photography, fashion shoots, and makeup artistry, always maintaining our commitment to quality, creativity, and personalized service.</p>
-                    </div>
+                    <div class="image-accent"></div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Meet the Team Section -->
-        <section class="team section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Meet the Team</h2>
-                    <p class="subtitle">The talented professionals behind Aliceta Studios</p>
-                </div>
-                <div class="team-grid">
-                    <!-- Team Member 1 -->
-                    <div class="team-member">
-                        <div class="member-image">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='18' text-anchor='middle' dominant-baseline='middle' fill='%23999'%3EAlice Taylor%3C/text%3E%3C/svg%3E" alt="Alice Taylor - Founder & Lead Photographer">
-                        </div>
-                        <div class="member-info">
-                            <h3>Alice Taylor</h3>
-                            <p class="member-role">Founder & Lead Photographer</p>
-                            <p class="member-bio">With over 15 years of experience, Alice specializes in portrait and fashion photography. Her work has been featured in several regional magazines.</p>
-                            <div class="member-social">
-                                <a href="#" aria-label="Alice Taylor's Instagram"><i class="fab fa-instagram"></i></a>
-                                <a href="#" aria-label="Alice Taylor's LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                
+                <div class="about-content">
+                    <h2 class="content-title">Meet Taiwo O. Oliyide</h2>
+                    <div class="title-underline"></div>
                     
-                    <!-- Team Member 2 -->
-                    <div class="team-member">
-                        <div class="member-image">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='18' text-anchor='middle' dominant-baseline='middle' fill='%23999'%3EMark Johnson%3C/text%3E%3C/svg%3E" alt="Mark Johnson - Wedding Photographer">
-                        </div>
-                        <div class="member-info">
-                            <h3>Mark Johnson</h3>
-                            <p class="member-role">Wedding Photographer</p>
-                            <p class="member-bio">Mark has captured over 200 weddings in his 8-year career. His candid style brings out the authentic emotions of each couple's special day.</p>
-                            <div class="member-social">
-                                <a href="#" aria-label="Mark Johnson's Instagram"><i class="fab fa-instagram"></i></a>
-                                <a href="#" aria-label="Mark Johnson's LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="about-text">
+                        Driven by a love for visual storytelling, I transitioned from makeup artistry into photography, 
+                        bringing a unique perspective that combines both art forms. My journey has been defined by a 
+                        passion for capturing authentic moments and creating images that resonate with emotion and beauty.
+                    </p>
                     
-                    <!-- Team Member 3 -->
-                    <div class="team-member">
-                        <div class="member-image">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='18' text-anchor='middle' dominant-baseline='middle' fill='%23999'%3ESarah Chen%3C/text%3E%3C/svg%3E" alt="Sarah Chen - Makeup Artist">
+                    <p class="about-text">
+                        As an entrepreneur and makeup instructor, I've had the privilege of training over a thousand 
+                        makeup artists and teaching with prestigious programs like Daystar Skill Acquisition and House 
+                        of Tara International in Lagos. This teaching experience has deepened my understanding of beauty, 
+                        composition, and the transformative power of visual art.
+                    </p>
+                    
+                    <p class="about-text">
+                        I bring creativity, technical skill, and genuine care to every session. Whether it's a portrait 
+                        that captures your essence, a wedding that tells your love story, or a fashion shoot that 
+                        showcases bold creativity, I approach each project with meticulous attention to detail and a 
+                        commitment to excellence.
+                    </p>
+                    
+                    <div class="about-signature">
+                        <div class="signature-line"></div>
+                        <p class="signature-text">Taiwo O. Oliyide</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="quick-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📸</div>
+                    <div class="stat-number">10+</div>
+                    <p class="stat-label">Years of Experience</p>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">💄</div>
+                    <div class="stat-number">1,000+</div>
+                    <p class="stat-label">Makeup Artists Trained</p>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">🎓</div>
+                    <div class="stat-number">2</div>
+                    <p class="stat-label">Major Training Programs</p>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-number">500+</div>
+                    <p class="stat-label">Happy Clients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="expertise-section">
+        <div class="container">
+            <h2 class="section-title">My Approach</h2>
+            <p class="section-subtitle">The art and science behind every shot</p>
+            
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3 class="expertise-title">Storytelling</h3>
+                    <p class="expertise-text">
+                        Every image should tell a story. I focus on capturing genuine emotions and authentic 
+                        moments that reveal the true essence of my subjects.
+                    </p>
+                </div>
+                
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"></path>
+                        </svg>
+                    </div>
+                    <h3 class="expertise-title">Composition</h3>
+                    <p class="expertise-text">
+                        Thoughtful composition creates visual harmony. I carefully consider light, space, and 
+                        balance to create images that are both beautiful and impactful.
+                    </p>
+                </div>
+                
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                        </svg>
+                    </div>
+                    <h3 class="expertise-title">Color Theory</h3>
+                    <p class="expertise-text">
+                        My background in makeup artistry gives me a unique understanding of color. I use this 
+                        knowledge to create images with rich, harmonious palettes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Statement -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="mission-content">
+                <div class="mission-image">
+                    <div class="image-placeholder mission-placeholder">
+                        <span class="placeholder-text">Working Behind the Camera</span>
+                    </div>
+                </div>
+                
+                <div class="mission-text">
+                    <h2 class="mission-title">My Mission</h2>
+                    <div class="title-underline"></div>
+                    <p class="mission-description">
+                        To create timeless images that celebrate beauty, authenticity, and the unique stories of 
+                        every individual I work with. Through my lens, I aim to capture not just how people look, 
+                        but who they truly are—preserving moments that will be cherished for generations.
+                    </p>
+                    <p class="mission-description">
+                        I believe that great photography is a collaboration. By creating a comfortable, supportive 
+                        environment, I help my clients feel confident and natural, allowing their true selves to 
+                        shine through in every image.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Programs -->
+    <section class="training-section">
+        <div class="container">
+            <h2 class="section-title">Training & Education</h2>
+            <p class="section-subtitle">Empowering the next generation of makeup artists</p>
+            
+            <div class="training-grid">
+                <div class="training-card">
+                    <div class="training-logo">
+                        <div class="image-placeholder training-logo-placeholder">
+                            <span class="placeholder-text">Daystar University</span>
                         </div>
-                        <div class="member-info">
-                            <h3>Sarah Chen</h3>
-                            <p class="member-role">Makeup Artist</p>
-                            <p class="member-bio">Sarah is a certified makeup artist with expertise in both everyday and editorial looks. She ensures every client looks their absolute best before stepping in front of the camera.</p>
-                            <div class="member-social">
-                                <a href="#" aria-label="Sarah Chen's Instagram"><i class="fab fa-instagram"></i></a>
-                                <a href="#" aria-label="Sarah Chen's LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            </div>
+                    </div>
+                    <h3 class="training-name">Daystar Skill Acquisition</h3>
+                    <p class="training-description">
+                        Lead makeup instructor for comprehensive beauty training programs, empowering students 
+                        with professional skills and industry knowledge.
+                    </p>
+                </div>
+                
+                <div class="training-card">
+                    <div class="training-logo">
+                        <div class="image-placeholder training-logo-placeholder">
+                            <span class="placeholder-text">House of Tara</span>
                         </div>
                     </div>
+                    <h3 class="training-name">House of Tara International</h3>
+                    <p class="training-description">
+                        Certified instructor with Lagos's premier beauty academy, specializing in advanced makeup 
+                        techniques and business development for aspiring artists.
+                    </p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Our Approach Section -->
-        <section class="approach section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Our Approach</h2>
-                    <p class="subtitle">What makes Aliceta Studios different</p>
-                </div>
-                <div class="approach-content">
-                    <div class="approach-text">
-                        <h3>Client-Centered Photography</h3>
-                        <p>At Aliceta Studios, we believe that great photography is about more than just technical skill—it's about connection. We take the time to understand your vision, preferences, and what makes you unique.</p>
-                        <p>Our approach combines technical excellence with a relaxed, enjoyable experience. We guide you through every step of the process, from planning your session to selecting your final images.</p>
-                        <ul class="approach-list">
-                            <li><i class="fas fa-check"></i> Personalized consultation before every shoot</li>
-                            <li><i class="fas fa-check"></i> Relaxed, comfortable shooting environment</li>
-                            <li><i class="fas fa-check"></i> Professional editing and retouching</li>
-                            <li><i class="fas fa-check"></i> High-quality prints and digital deliverables</li>
-                            <li><i class="fas fa-check"></i> Ongoing support and satisfaction guarantee</li>
-                        </ul>
-                    </div>
-                    <div class="approach-image">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='24' text-anchor='middle' dominant-baseline='middle' fill='%23999'%3EPhotography Session%3C/text%3E%3C/svg%3E" alt="Photography session at Aliceta Studios" class="rounded-image">
+    <!-- Behind the Scenes -->
+    <section class="behind-scenes">
+        <div class="container">
+            <h2 class="section-title">Behind the Scenes</h2>
+            <p class="section-subtitle">A glimpse into my creative process</p>
+            
+            <div class="bts-grid">
+                <div class="bts-image">
+                    <div class="image-placeholder bts-placeholder">
+                        <span class="placeholder-text">Setting Up for a Portrait Session</span>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Studio Tour Section -->
-        <section class="studio-tour section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Our Studio</h2>
-                    <p class="subtitle">Take a virtual tour of our creative space</p>
+                <div class="bts-image">
+                    <div class="image-placeholder bts-placeholder">
+                        <span class="placeholder-text">Wedding Day Preparation</span>
+                    </div>
                 </div>
-                <div class="studio-gallery">
-                    <div class="gallery-item">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='18' text-anchor='middle' dominant-baseline='middle' fill='%23999'%3EStudio Reception%3C/text%3E%3C/svg%3E" alt="Aliceta Studios reception area">
-                        <div class="gallery-caption">Reception Area</div>
+                <div class="bts-image">
+                    <div class="image-placeholder bts-placeholder">
+                        <span class="placeholder-text">Fashion Shoot Direction</span>
                     </div>
-                    <div class="gallery-item">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='18' text-anchor='middle' dominant-baseline='middle' fill='%23999'%3EMain Studio%3C/text%3E%3C/svg%3E" alt="Aliceta Studios main photography area">
-                        <div class="gallery-caption">Main Studio</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='18' text-anchor='middle' dominant-baseline='middle' fill='%23999'%3EMakeup Station%3C/text%3E%3C/svg%3E" alt="Aliceta Studios makeup station">
-                        <div class="gallery-caption">Makeup Station</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='18' text-anchor='middle' dominant-baseline='middle' fill='%23999'%3EClient Lounge%3C/text%3E%3C/svg%3E" alt="Aliceta Studios client lounge">
-                        <div class="gallery-caption">Client Lounge</div>
+                </div>
+                <div class="bts-image">
+                    <div class="image-placeholder bts-placeholder">
+                        <span class="placeholder-text">Makeup Training Session</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- CTA Section -->
-        <section class="cta-section">
-            <div class="container">
-                <h2>Ready to work with us?</h2>
-                <p>Book a session today or contact us to discuss your photography needs</p>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Work Together?</h2>
+                <p class="cta-text">Let's create something beautiful. Book a consultation to discuss your vision.</p>
                 <div class="cta-buttons">
-                    <a href="booking.html" class="btn btn-primary">Book a Session</a>
-                    <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                    <a href="booking.html" class="btn btn-primary btn-large">Book a Consultation</a>
+                    <a href="portfolio.html" class="btn btn-secondary btn-large">View My Work</a>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="site-footer">
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>Aliceta Studios</h3>
-                    <p>Capturing life's beautiful moments</p>
+                <div class="footer-section">
+                    <h3 class="footer-title">Aliceta Studios</h3>
+                    <p class="footer-text">Professional portrait, wedding, and fashion photography in Lagos.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
                         <li><a href="about.html">About</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="booking.html">Booking</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
                     </ul>
                 </div>
-                <div class="footer-contact">
-                    <h4>Contact Us</h4>
-                    <address>
-                        <p><i class="fas fa-map-marker-alt"></i> 123 Photo Lane, Studio City, CA 91604</p>
-                        <p><i class="fas fa-phone"></i> (555) 123-4567</p>
-                        <p><i class="fas fa-envelope"></i> info@alicetastudios.com</p>
-                    </address>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html#portraits">Portrait Photography</a></li>
+                        <li><a href="services.html#weddings">Wedding Photography</a></li>
+                        <li><a href="services.html#fashion">Fashion Photography</a></li>
+                        <li><a href="services.html#makeup">Makeup Training</a></li>
+                    </ul>
                 </div>
-                <div class="footer-social">
-                    <h4>Follow Us</h4>
-                    <div class="social-icons">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Stay Connected</h4>
+                    <p class="footer-text">Subscribe to our newsletter for updates and exclusive offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required aria-label="Email address">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2023 Aliceta Studios. All rights reserved.</p>
-                <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p>&copy; 2025 Aliceta Studios. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
-    <script src="js/accessibility.js"></script>
-    <script src="js/performance.js"></script>
+    <!-- Mobile Sticky CTA -->
+    <div class="mobile-cta" id="mobileCta">
+        <a href="booking.html" class="btn btn-primary btn-block">Book a Consultation</a>
+    </div>
+
     <script src="js/about.js"></script>
 </body>
 </html>

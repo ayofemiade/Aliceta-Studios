@@ -1,184 +1,186 @@
 /**
- * Aliceta Studios - Portfolio Page JavaScript
- * Handles gallery filtering, lightbox, and testimonial slider
+ * Portfolio Page JavaScript
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize lightGallery
-    const galleryElement = document.getElementById('gallery');
-    if (galleryElement) {
-        lightGallery(galleryElement, {
-            selector: '.gallery-item',
-            plugins: [lgZoom, lgThumbnail],
-            speed: 500,
-            download: false,
-            counter: false,
-            thumbnail: true,
-            animateThumb: true,
-            zoomFromOrigin: true,
-            allowMediaOverlap: true
-        });
-    }
+    // Initialize all portfolio functionality
+    initGalleryFilter();
+    initPortfolioModal();
+    initTestimonialSlider();
+    initAnimations();
+});
 
-    // Portfolio filtering
+// Gallery filtering functionality
+function initGalleryFilter() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
     
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Remove active class from all buttons
+            // Update active button
             filterButtons.forEach(btn => btn.classList.remove('active'));
-            
-            // Add active class to clicked button
             this.classList.add('active');
             
-            const filterValue = this.getAttribute('data-filter');
-            
             // Filter gallery items
+            const filterValue = this.getAttribute('data-filter');
             galleryItems.forEach(item => {
                 if (filterValue === 'all' || item.classList.contains(filterValue)) {
-                    item.classList.remove('hidden');
-                    // Add fade-in animation
-                    item.style.opacity = '0';
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                    }, 50);
+                    item.style.display = 'block';
+                    setTimeout(() => item.classList.add('visible'), 100);
                 } else {
-                    item.classList.add('hidden');
+                    item.style.display = 'none';
+                    item.classList.remove('visible');
                 }
             });
         });
     });
+}
 
-    // Testimonial slider
-    const testimonialSlides = document.querySelectorAll('.testimonial-slide');
-    const prevButton = document.querySelector('.prev-testimonial');
-    const nextButton = document.querySelector('.next-testimonial');
+// Portfolio modal functionality
+function initPortfolioModal() {
+    const modal = document.getElementById('portfolioModal');
+    const viewButtons = document.querySelectorAll('.btn-view');
+    const closeButton = document.querySelector('.modal-close');
+    const prevButton = document.querySelector('.modal-prev');
+    const nextButton = document.querySelector('.modal-next');
+    
+    // Sample portfolio data
+    const portfolioItems = document.querySelectorAll('.gallery-item');
+    let currentIndex = 0;
+    
+    // Open modal
+    viewButtons.forEach((button, index) => {
+        button.addEventListener('click', function() {
+            currentIndex = index;
+            updateModalContent(currentIndex);
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+    });
+    
+    // Close modal
+    if (closeButton) {
+        closeButton.addEventListener('click', closeModal);
+    }
+    
+    // Close when clicking outside
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) closeModal();
+    });
+    
+    // Navigation
+    if (prevButton) {
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + portfolioItems.length) % portfolioItems.length;
+            updateModalContent(currentIndex);
+        });
+    }
+    
+    if (nextButton) {
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % portfolioItems.length;
+            updateModalContent(currentIndex);
+        });
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(event) {
+        if (modal.style.display !== 'block') return;
+        
+        if (event.key === 'Escape') closeModal();
+        else if (event.key === 'ArrowLeft') prevButton.click();
+        else if (event.key === 'ArrowRight') nextButton.click();
+    });
+    
+    function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+    
+    function updateModalContent(index) {
+        const item = portfolioItems[index];
+        if (!item) return;
+        
+        const img = item.querySelector('img');
+        const title = item.getAttribute('data-title') || 'Portfolio Item';
+        const category = item.getAttribute('data-category') || '';
+        const description = item.getAttribute('data-description') || '';
+        
+        modal.querySelector('.modal-image img').src = img.src;
+        modal.querySelector('.modal-title').textContent = title;
+        modal.querySelector('.modal-category').textContent = category;
+        modal.querySelector('.modal-description').textContent = description;
+    }
+}
+
+// Testimonial slider
+function initTestimonialSlider() {
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const prevBtn = document.querySelector('.testimonial-prev');
+    const nextBtn = document.querySelector('.testimonial-next');
+    const dots = document.querySelector('.testimonial-dots');
+    
+    if (!slides.length) return;
+    
     let currentSlide = 0;
     
-    // Show first slide initially
-    if (testimonialSlides.length > 0) {
-        testimonialSlides[0].classList.add('active');
+    // Create dots
+    if (dots) {
+        slides.forEach((_, i) => {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i));
+            dots.appendChild(dot);
+        });
     }
     
-    // Function to show a specific slide
-    function showSlide(index) {
-        // Remove active class from all slides
-        testimonialSlides.forEach(slide => slide.classList.remove('active'));
+    function goToSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.display = i === index ? 'block' : 'none';
+        });
         
-        // Add active class to current slide
-        testimonialSlides[index].classList.add('active');
+        document.querySelectorAll('.dot').forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+        
+        currentSlide = index;
     }
     
-    // Next button click handler
-    if (nextButton) {
-        nextButton.addEventListener('click', function() {
-            currentSlide++;
-            if (currentSlide >= testimonialSlides.length) {
-                currentSlide = 0;
-            }
-            showSlide(currentSlide);
+    // Initialize
+    goToSlide(0);
+    
+    // Navigation
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            goToSlide((currentSlide - 1 + slides.length) % slides.length);
         });
     }
     
-    // Previous button click handler
-    if (prevButton) {
-        prevButton.addEventListener('click', function() {
-            currentSlide--;
-            if (currentSlide < 0) {
-                currentSlide = testimonialSlides.length - 1;
-            }
-            showSlide(currentSlide);
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            goToSlide((currentSlide + 1) % slides.length);
         });
     }
     
-    // Auto-rotate testimonials every 5 seconds
-    setInterval(function() {
-        if (document.visibilityState === 'visible') {
-            currentSlide++;
-            if (currentSlide >= testimonialSlides.length) {
-                currentSlide = 0;
-            }
-            showSlide(currentSlide);
-        }
+    // Auto-advance
+    setInterval(() => {
+        goToSlide((currentSlide + 1) % slides.length);
     }, 5000);
+}
 
-    // Create placeholder SVG images for portfolio items
-    // This is a temporary solution until real images are added
-    function createPlaceholderImages() {
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        
-        galleryItems.forEach((item, index) => {
-            const img = item.querySelector('img');
-            const category = Array.from(item.classList)
-                .find(cls => ['portrait', 'wedding', 'fashion', 'makeup'].includes(cls));
-            
-            // If image src is not set or doesn't exist
-            if (!img.getAttribute('src') || img.getAttribute('src').includes('portfolio/')) {
-                // Create SVG placeholder with category-specific color
-                const colors = {
-                    'portrait': '#9B7446',
-                    'wedding': '#EFD6C7',
-                    'fashion': '#031722',
-                    'makeup': '#F7F6F4'
-                };
-                
-                const color = colors[category] || '#9B7446';
-                const textColor = ['wedding', 'makeup'].includes(category) ? '#031722' : '#F7F6F4';
-                
-                const svgContent = `
-                <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
-                    <rect width="800" height="800" fill="${color}" />
-                    <text x="400" y="400" font-family="Arial" font-size="32" fill="${textColor}" text-anchor="middle" dominant-baseline="middle">
-                        ${category.charAt(0).toUpperCase() + category.slice(1)} ${index % 3 + 1}
-                    </text>
-                    <text x="400" y="450" font-family="Arial" font-size="24" fill="${textColor}" text-anchor="middle" dominant-baseline="middle">
-                        Aliceta Studios
-                    </text>
-                </svg>
-                `;
-                
-                const svgBlob = new Blob([svgContent], {type: 'image/svg+xml'});
-                const svgUrl = URL.createObjectURL(svgBlob);
-                
-                // Set the SVG as the image source
-                img.src = svgUrl;
-                item.setAttribute('data-src', svgUrl);
+// Animations
+function initAnimations() {
+    const elements = document.querySelectorAll('.fade-in, .gallery-item');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
             }
         });
-    }
+    }, { threshold: 0.1 });
     
-    // Call the function to create placeholder images
-    createPlaceholderImages();
-    
-    // Create placeholder SVG images for partner logos
-    function createPartnerLogos() {
-        const partnerLogos = document.querySelectorAll('.partner-logo img');
-        
-        partnerLogos.forEach((img, index) => {
-            // If image src is not set or doesn't exist
-            if (!img.getAttribute('src') || img.getAttribute('src').includes('partners/')) {
-                const partnerNames = ['Daystar Skill Acquisition', 'House of Tara International'];
-                const name = partnerNames[index % partnerNames.length];
-                
-                const svgContent = `
-                <svg xmlns="http://www.w3.org/2000/svg" width="300" height="150" viewBox="0 0 300 150">
-                    <rect width="300" height="150" fill="#F7F6F4" />
-                    <text x="150" y="75" font-family="Arial" font-size="16" fill="#031722" text-anchor="middle" dominant-baseline="middle">
-                        ${name}
-                    </text>
-                </svg>
-                `;
-                
-                const svgBlob = new Blob([svgContent], {type: 'image/svg+xml'});
-                const svgUrl = URL.createObjectURL(svgBlob);
-                
-                // Set the SVG as the image source
-                img.src = svgUrl;
-            }
-        });
-    }
-    
-    // Call the function to create partner logos
-    createPartnerLogos();
-});
+    elements.forEach(element => observer.observe(element));
+}
